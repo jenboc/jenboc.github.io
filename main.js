@@ -79,6 +79,9 @@ class Clock extends Object {
 }
 
 const clock = new Clock()
+const tickSound = new Audio("tick.mp4")
+const tockSound = new Audio("tock.mp4")
+
 var randObjects = []
 
 function ClearContainer(){
@@ -99,15 +102,16 @@ function RandColor(){
 	return "rgb(" + red + ", " + green + ", " + blue + ")"
 }
 
-
 function AddRandom(){
 	var word;
 
 	if (randObjects.length == 0 || randObjects[randObjects.length-1].object.innerText == "tock"){
 		word = "tick"
+		tickSound.play()
 	}
 	else {
 		word = "tock"
+		tockSound.play()
 	}
 
 	randObjects.push(new Object(objId="none", rotateDeg=randNumber(360), innerText=word, fgcolor=RandColor(), bgcolor="#ffffff", classes='random-word', posLeft=randNumber(100), posTop=randNumber(100)))
