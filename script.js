@@ -1,9 +1,10 @@
 words = ["tick", "tock"]
 
 class Object {
-	constructor(objId="none", rotateDeg=10, innerText="none", fgcolor="#000000", bgcolor="#ffffff", classes="", posLeft="none", posTop="none") {
+	constructor(objId="none", rotateDeg=0, innerText="none", fgcolor="#000000", classes="", posLeft="none", posTop="none") {
 		if (objId == "none") {
 			this.object = document.createElement("div")
+			this.object.onclick = this.delete
 		}
 		else {
 			this.object = document.getElementById(objId)
@@ -14,7 +15,6 @@ class Object {
 		}
 
 		this.fgcolor = fgcolor
-		this.bgcolor = bgcolor
 		this.rotation = rotateDeg
 		this.posLeft = posLeft
 		this.posTop = posTop
@@ -25,25 +25,31 @@ class Object {
 	}
 
 	updateStyle() {
-		this.object.style.cssText = "color: " + this.fgcolor + ";background-color: " + this.bgcolor + ";"
+		this.object.style.color = this.fgcolor
+		this.object.style.backgroundColor = this.bgcolor
 		
 		if (this.rotation > 0) {
-			this.object.style.cssText += "transform: rotate(" + this.rotation + "deg);"
+			this.object.style.transform += "rotate(" + this.rotation + "deg)"
 		}
 
 		if (this.posLeft != "none" && this.posTop != "none") {
-			this.object.style.cssText += "top: " + this.posTop + "%; left: " + this.posLeft + "%;"
+			this.object.style.top = this.posTop + "%"
+			this.object.style.left = this.posLeft + "%"
 		}
 	}
 
 	setParent(parentId) {
 		document.getElementById(parentId).appendChild(this.object)
 	}
+
+	delete(){
+		this.object.remove()
+	}
 }
 
 class Clock extends Object {
 	constructor() {
-		super("time", 0)
+		super("time")
 	}
 
 	updateTime() {		
@@ -64,7 +70,16 @@ class Clock extends Object {
 			}
 		}
 	
-		div.innerText = stringTime
+		document.getElementById("time").innerText = stringTime
+	}
+
+	changeColor(){
+		do {
+			this.bgcolor = RandColor();
+			this.fgcolor = RandColor();
+		} while (this.bgcolor == this.fgcolor)
+
+		this.updateStyle()
 	}
 }
 
@@ -91,17 +106,16 @@ function RandColor(){
 
 
 function AddRandom(){
-	var newTickTock = new Object(objId="none", rotateDeg=randNumber(360), innerText=words[randNumber(words.length)], fgcolor=RandColor(), bgcolor="rgb(255,255,255)", classes='random-word', posLeft=randNumber(100), posTop=randNumber(100))
+	var newTickTock = new Object(objId="none", rotateDeg=randNumber(360), innerText=words[randNumber(words.length)], fgcolor=RandColor(), classes='random-word', posLeft=randNumber(100), posTop=randNumber(100))
 	newTickTock.setParent('random-container')
-	localStorage.ticktock = div.innerHTML
+	localStorage.ticktock = document.getElementById('random-container')
 }
 
-function ChangeClockColor(){
-	bgColor = RandColor();
-	fgColor = RandColor();
-	div = document.getElementById('time')
-	div.style.cssText = "background-color: " + bgColor + ";color: " + fgColor + ";"
+
+function cchangecolor(){
+	clock.changeColor()
 }
+
 
 container = document.getElementById('random-container')
 container.innerHTML = localStorage.ticktock
@@ -126,5 +140,5 @@ else {
 }
 
 window.setInterval(clock.updateTime, 1000);
-window.setInterval(ChangeClockColor,cchange);
+window.setInterval(cchangecolor,cchange)
 window.setInterval(AddRandom, tadd);
