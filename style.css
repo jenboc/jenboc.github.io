@@ -12,6 +12,7 @@ body {
 }
 
 #time {	
+	background-color: black;
 	color: white;
 	border-radius: 150px;
 	
@@ -21,6 +22,8 @@ body {
 	font-family: "Titan One";
 
 	text-align: center;
+
+	transition: all 1.5s linear;
 
 }
 
