@@ -2,6 +2,9 @@
 
 body {
 	user-select: none;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
 }
 
 #random-container {
@@ -14,17 +17,11 @@ body {
 	
 	width: 350px;
 
-	position: absolute; 
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-
 	font-size: 50pt;
 	font-family: "Titan One";
 
-	display: flex;
-	align-content: center;
-	justify-content: center;
+	text-align: center;
+
 }
 
 .random-word { 
