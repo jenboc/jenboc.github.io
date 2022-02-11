@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
 body {
 	user-select: none;
 }
@@ -10,7 +12,7 @@ body {
 	color: white;
 	border-radius: 150px;
 	
-	width: 300px;
+	width: 350px;
 
 
 	position: absolute; 
@@ -19,7 +21,7 @@ body {
 	transform: translate(-50%, -50%);
 
 	font-size: 50pt;
-	font-family: "Comic Sans MS";
+	font-family: "Titan One";
 
 	display: flex;
 	align-content: center;
@@ -28,7 +30,7 @@ body {
 
 .random-word { 
 	border: 1px solid black;
-	font-family: "Comic Sans MS";
+	font-family: "Titan One";
 	font-size: 25pt;
 	background-color: white;
 
