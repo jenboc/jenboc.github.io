@@ -50,7 +50,7 @@ class Object {
 
 class Clock extends Object {
 	constructor() {
-		super("time", 0, "HELLO")
+		super("time", 0, "HELLO", "#ffffff")
 	}
 
 	updateTime() {		
@@ -81,6 +81,7 @@ class Clock extends Object {
 }
 
 const clock = new Clock()
+var randObjects = []
 
 function ClearContainer(){
 	var div = document.getElementById('random-container');
@@ -102,32 +103,19 @@ function RandColor(){
 
 
 function AddRandom(){
-	var newTickTock = new Object(objId="none", rotateDeg=randNumber(360), innerText=words[randNumber(words.length)], fgcolor=RandColor(), bgcolor="#ffffff", classes='random-word', posLeft=randNumber(100), posTop=randNumber(100))
-	newTickTock.setParent('random-container')
+	randObjects.push(new Object(objId="none", rotateDeg=randNumber(360), innerText=words[randNumber(words.length)], fgcolor=RandColor(), bgcolor="#ffffff", classes='random-word', posLeft=randNumber(100), posTop=randNumber(100)))
+	randObjects[randObjects.length-1].setParent('random-container')
+	
+	if (randObjects.length > 500) {
+		randObjects.shift()
+	}
 }
 
 function cchangecolor(){
 	clock.changeColor()
 }
 
-function GetSettings() {
-	var query = window.location.search;
-	var parameters = new URLSearchParams(query);
-
-	var settings = [1000, 1000]
-
-	if (parameters.has('cchange')){
-		cchange = parameters.get('cchange')
-	}
-
-	if (parameters.has('tadd')){
-		tadd = parameters.get('tadd')
-	}
-
-	return settings
-}
-
-settings = GetSettings()
+settings = [1000,1000]
 
 window.setInterval(clock.updateTime, 1000);
 window.setInterval(cchangecolor,settings[0])
