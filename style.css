@@ -1,0 +1,41 @@
+body {
+	user-select: none;
+}
+
+#random-container {
+	color: white;
+}
+
+#time {	
+	color: white;
+	border-radius: 150px;
+	
+	width: 300px;
+
+
+	position: absolute; 
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	font-size: 50pt;
+	font-family: "Comic Sans MS";
+
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.random-word { 
+	border: 1px solid black;
+	font-family: "Comic Sans MS";
+	font-size: 25pt;
+	background-color: white;
+
+	position: absolute;
+	
+	display: flex;
+	justify-content: center;
+	
+	width: 200px;
+}
