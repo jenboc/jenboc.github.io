@@ -1,5 +1,3 @@
-words = ["tick", "tock"]
-
 class Object {
 	constructor(objId="none", rotateDeg=0, innerText="none", fgcolor="#000000", bgcolor="#ffffff", classes="", posLeft="none", posTop="none") {
 		if (objId == "none") {
@@ -103,9 +101,18 @@ function RandColor(){
 
 
 function AddRandom(){
-	randObjects.push(new Object(objId="none", rotateDeg=randNumber(360), innerText=words[randNumber(words.length)], fgcolor=RandColor(), bgcolor="#ffffff", classes='random-word', posLeft=randNumber(100), posTop=randNumber(100)))
+	var word;
+
+	if (randObjects.length == 0 || randObjects[randObjects.length-1].object.innerText == "tock"){
+		word = "tick"
+	}
+	else {
+		word = "tock"
+	}
+
+	randObjects.push(new Object(objId="none", rotateDeg=randNumber(360), innerText=word, fgcolor=RandColor(), bgcolor="#ffffff", classes='random-word', posLeft=randNumber(100), posTop=randNumber(100)))
 	randObjects[randObjects.length-1].setParent('random-container')
-	
+
 	if (randObjects.length > 500) {
 		randObjects.shift()
 	}
