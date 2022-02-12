@@ -87,7 +87,6 @@ var randObjects = []
 function ClearContainer(){
 	var div = document.getElementById('random-container');
 	div.innerHTML = "";
-	localStorage.ticktock = div.innerHTML
 }
 
 function randNumber(max){
@@ -102,7 +101,15 @@ function RandColor(){
 	return "rgb(" + red + ", " + green + ", " + blue + ")"
 }
 
-function AddRandom(){
+settings = [1000,1000]
+
+window.setInterval(clock.updateTime, 1000); //Update clock interval
+
+window.setInterval(function() { //Change clock colour interval
+	clock.changeColor()
+},settings[0])
+
+window.setInterval(function() { //Add tick tock interval
 	var word;
 
 	if (randObjects.length == 0 || randObjects[randObjects.length-1].object.innerText == "tock"){
@@ -120,14 +127,4 @@ function AddRandom(){
 	if (randObjects.length > 500) {
 		randObjects.shift()
 	}
-}
-
-function cchangecolor(){
-	clock.changeColor()
-}
-
-settings = [1000,1000]
-
-window.setInterval(clock.updateTime, 1000);
-window.setInterval(cchangecolor,settings[0])
-window.setInterval(AddRandom, settings[1]);
+}, settings[1]);
