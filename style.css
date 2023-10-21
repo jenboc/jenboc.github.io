@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Sarala:wght@400;700&display=swap');
+
+:root {
+    --white: #fffcf2;
+    --light-gray: #ccc5b9;
+    --dark-gray: #403d39;
+    --black: #252422;
+    --orange: #eb5e28;
+}
+
+body { 
+    background-color: var(--white);
+    font-family: "Oxygen", sans-serif;
+}
+
+header {
+    background-color: var(--orange);
+    font-size: 2em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+header h1 {
+    margin: 0.5ch;
+    font-family: "Sarala", sans-serif;
+}
+
+nav {
+    background-color: var(--dark-gray);
+    font-size: 2em; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1ch;
+    
+    border-top: var(--white) solid;
+}
+
+nav a {
+    margin: 1ch;
+    text-decoration: none;
+
+    color: var(--white)
+}
+
+nav a:hover {
+    color: var(--light-gray);
+    text-decoration: underline;
+}
+
+main {
+    background-color: var(--light-gray);
+    color: var(--black);
+    padding: 2ch;
+
+    border-top: white solid;
+}
+
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 2ch;
+
+    border-top: white solid;
+}
