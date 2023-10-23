@@ -5,4 +5,8 @@ draft = false
 menu = ['nav']
 +++
 
-Waffle about projects blah blah blah. My github is [here](https://www.github.com/jenboc). I will occasionally post here about some of my favourites.
+Hi! This is where I will post about some of the projects I am proud of. If you are interested in some more web-projects that I have created check out: 
+- [Archimedes](https://jensoncain.co.uk/archimedes)
+- [Virtual Card](https://jensoncain.co.uk/virtual-card)
+
+If you want to view all of my public projects, then feel free to check out my [GitHub](https://www.github.com/jenboc)!

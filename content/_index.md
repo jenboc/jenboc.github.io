@@ -6,7 +6,9 @@ menu = ['nav']
 weight = 1
 +++
 
-# Website coming soon.
-In the meantime, checkout my other web projects:
-- [Archimedes](https://jensoncain.co.uk/archimedes)
-- [Virtual Card](https://jensoncain.co.uk/virtual-card)
+# Hello there! Welcome! 
+I'm Jenson. I'm currently an undergraduate student studying Computer Science & Mathematics. I decided to make this website to showcase some of the projects that I am most proud of, as well as make the occasional blog post to share and document my knowledge.
+
+I wouldn't say that I have a favourite aspect of Computer Science or Maths, so my projects and blog posts are likely to be very different from each other. 
+
+I've only just got this website up and running, so the blog will be lacking in features for a while - I just wanted a little something to get me started. However, I promise that it will become easier to use as time goes on.
