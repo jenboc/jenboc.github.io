@@ -5,6 +5,11 @@ const header = document.getElementById("header");
 var width;
 var height;
 
+function gotoUrl(url)
+{
+	window.location.assign(url);
+}
+
 function setCanvasSize(canvasCtx) 
 {
 	const headerRect = header.getBoundingClientRect();

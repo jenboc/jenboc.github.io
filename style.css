@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');	
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
 html, body {
 	margin: 0;
 	padding: 0;
-
-	color: white;
+	color: #FFFAFF;
+	font-size: 1.125rem;
 }
 
 #container {
@@ -80,7 +81,7 @@ nav {
 	color: white;
 }
 
-.nav-icon {
+.small-icon {
 	width: 5ch;
 	height: 5ch;
 }
@@ -106,10 +107,44 @@ main {
 	width: 100%;
 	justify-content: center;
 
-	background-color: gray;
+	background-color: #303036;
 	flex: 1 1 auto;
+
+	font-family: "Oxygen", sans-serif;
+	font-size: 1.125em;
+}
+
+section h1 {
+	text-align: center;
+	color: #FC5130;
 }
 
 .content {
-	width: 75%;
+	padding: 2.5ch;
+	width: 50%;
+}
+
+.project-button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2ch;
+
+	padding: 1ch;
+	padding-left: 2ch;
+	padding-right: 2ch;
+
+	font-size: 1.125em;
+
+	background-color: #30BCED;
+	border-radius: 5px;
+	border: none;
+}
+
+.project-button:hover {
+	background-color: #1C9ECE;
+}
+
+.project-button:active {
+	background-color: #0A79A1;
 }
