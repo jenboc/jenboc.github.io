@@ -1,3 +1,21 @@
+html, body {
+	margin: 0;
+	padding: 0;
+
+	color: white;
+}
+
+#container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+header {
+	margin-top: 2ch;
+}
+
 .top-bar {
 	display: flex;
 	flex-direction: row;
@@ -5,6 +23,7 @@
 	align-items: center;
 	padding-left: 5ch;
 	padding-right: 5ch;
+	padding-bottom: 1ch;
 }
 
 .header-branding {
@@ -12,6 +31,10 @@
 	flex-direction: row;
 	gap: 3ch;
 	align-items: center;
+}
+
+.top-bar, .short-intro {
+	padding-bottom: 10rem;
 }
 
 #logo {
@@ -36,6 +59,13 @@ nav {
 	flex-direction: row;
 	gap: 1ch;
 	align-items: center;
+}
+
+.nav-link:visited {
+}
+
+.nav-link:hovered h1 {
+	font-style: italic;
 }
 
 .nav-icon {
