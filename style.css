@@ -114,6 +114,10 @@ main {
 	font-size: 1.125em;
 }
 
+section {
+	margin: 3ch;
+}
+
 section h1 {
 	text-align: center;
 	color: #FC5130;
