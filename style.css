@@ -1,0 +1,61 @@
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 5ch;
+	padding-right: 5ch;
+}
+
+.header-branding {
+	display: flex;
+	flex-direction: row;
+	gap: 3ch;
+	align-items: center;
+}
+
+#logo {
+	width: 10ch;
+	height: 10ch;
+	border-radius: 100%;
+}
+
+#name {
+	margin: 0;
+	padding: 0
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	gap: 3ch;
+}
+
+.nav-link {
+	display: flex;
+	flex-direction: row;
+	gap: 1ch;
+	align-items: center;
+}
+
+.nav-icon {
+	width: 5ch;
+	height: 5ch;
+}
+
+.short-intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#name {
+	font-size: 3em;
+	
+}
+
+#slogan {
+	font-size: 1.25em;
+	font-style: italic;
+}
