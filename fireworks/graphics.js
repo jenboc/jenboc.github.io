@@ -122,7 +122,6 @@ class Canvas
 
     update() 
     {
-        console.log("update");
         this.#spawners.forEach(s => s.update());
 
         const toDelete = [];
@@ -141,7 +140,6 @@ class Canvas
 
     draw() 
     {
-        console.log("draw");
         this.#sprites.forEach(sprite => sprite.draw(this.#ctx));
     }
 
@@ -153,11 +151,9 @@ class Canvas
 
     tick(timestamp) 
     {
-        console.log("tick");
         this.clear();
         this.update();
         this.draw();
-        console.log("end tick");
 		requestAnimationFrame(() => this.tick());
     }
 
