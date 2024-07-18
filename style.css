@@ -73,8 +73,8 @@ nav {
 	align-items: center;
 }
 
-.nav-link:hover {
-	font-style: italic;
+.nav-link:hover h3 {
+	color: #30BCED;
 }
 
 .nav-link:visited {
