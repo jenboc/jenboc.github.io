@@ -1,21 +1,15 @@
-const canvas = document.getElementById("header-canvas");
-const ctx = canvas.getContext("2d");
-const header = document.getElementById("header");
+const GRAVITY = 0.1;
 
-var width;
-var height;
-
+// Used by project buttons
 function gotoUrl(url)
 {
 	window.location.assign(url);
 }
 
-function setCanvasSize(canvasCtx) 
-{
-	const headerRect = header.getBoundingClientRect();
-	height = canvasCtx.height = headerRect.top + headerRect.height;
-	width = canvasCtx.width = headerRect.width;
-}
+const canvas = new Canvas("header-canvas", new Colour(0, 0, 0, 1));
+const fireworkSpawner = new FireworkLauncher(canvas, 1, 10, 45, GRAVITY, 10, 40, 10, 30, 10, 20);
+canvas.addSpawner(fireworkSpawner);
+canvas.updateDimensions();
+canvas.start();
 
-setCanvasSize(canvas);
-ctx.fillRect(0, 0, width, height);
+window.onresize = (e) => canvas.updateDimensions();
