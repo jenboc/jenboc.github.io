@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');	
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+html, body {
+	margin: 0;
+	padding: 0;
+	color: #FFFAFF;
+	font-size: 1.125rem;
+}
+
+#container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	margin-top: 2ch;
+	font-family: "Ubuntu Mono", monospace;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 5ch;
+	padding-right: 5ch;
+	padding-bottom: 1ch;
+}
+
+.header-branding {
+	display: flex;
+	flex-direction: row;
+	gap: 3ch;
+	align-items: center;
+}
+
+.top-bar, .short-intro {
+	padding-bottom: 10rem;
+}
+
+#logo {
+	width: 10ch;
+	height: 10ch;
+	border-radius: 100%;
+}
+
+#name {
+	margin: 0;
+	padding: 0
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	gap: 3ch;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: white;
+
+	display: flex;
+	flex-direction: row;
+	gap: 1.5ch;
+	align-items: center;
+}
+
+.nav-link:hover h3 {
+	color: #30BCED;
+}
+
+.nav-link:visited {
+	color: white;
+}
+
+.small-icon {
+	width: 5ch;
+	height: 5ch;
+}
+
+.short-intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#name {
+	font-size: 3em;
+}
+
+#slogan {
+	font-size: 1.25em;
+	font-style: italic;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+
+	background-color: #303036;
+	flex: 1 1 auto;
+
+	font-family: "Oxygen", sans-serif;
+	font-size: 1.125em;
+}
+
+section {
+	margin: 3ch;
+}
+
+section h1 {
+	text-align: center;
+	color: #FC5130;
+}
+
+.content {
+	padding: 2.5ch;
+	width: 50%;
+}
+
+.project-button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2ch;
+
+	padding: 1ch;
+	padding-left: 2ch;
+	padding-right: 2ch;
+
+	font-size: 1.125em;
+
+	background-color: #30BCED;
+	border-radius: 5px;
+	border: none;
+}
+
+.project-button:hover {
+	background-color: #1C9ECE;
+}
+
+.project-button:active {
+	background-color: #0A79A1;
+}
