@@ -12,6 +12,9 @@ html, body {
 	left: 0;
 	top: 0;
 	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 header {
@@ -96,4 +99,17 @@ nav {
 #slogan {
 	font-size: 1.25em;
 	font-style: italic;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+
+	background-color: gray;
+	flex: 1 1 auto;
+}
+
+.content {
+	width: 75%;
 }
