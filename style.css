@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');	
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -14,6 +16,9 @@ html, body {
 
 header {
 	margin-top: 2ch;
+	font-family: "Ubuntu Mono", monospace;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .top-bar {
@@ -55,17 +60,21 @@ nav {
 }
 
 .nav-link {
+	text-decoration: none;
+	color: white;
+
 	display: flex;
 	flex-direction: row;
-	gap: 1ch;
+	gap: 1.5ch;
 	align-items: center;
 }
 
-.nav-link:visited {
+.nav-link:hover {
+	font-style: italic;
 }
 
-.nav-link:hovered h1 {
-	font-style: italic;
+.nav-link:visited {
+	color: white;
 }
 
 .nav-icon {
@@ -82,7 +91,6 @@ nav {
 
 #name {
 	font-size: 3em;
-	
 }
 
 #slogan {
