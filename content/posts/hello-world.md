@@ -1,7 +1,8 @@
 +++
 date = '2025-08-13T17:23:16+01:00'
-draft = false
+draft = true
 title = 'Hello World'
+tags = ['hugo', 'test']
 +++
 
 # Hello World
