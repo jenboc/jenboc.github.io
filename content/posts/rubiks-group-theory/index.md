@@ -2,6 +2,7 @@
 date = "2025-09-09T17:48:38+01:00"
 draft = false
 title = "Applying Group Theory to the Rubik's Cube"
+tags = ['Mathematics', 'Abstract Algebra']
 +++
 {{< katex >}}
 
