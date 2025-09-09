@@ -16,7 +16,7 @@ title = "Jenson Cain"
 [params.author]
     name = "Jenson Cain"
     image = "https://github.com/jenboc.png"
-    headline = ""
+    headline = "Student in Computer Science and Mathematics"
     # bio = "A little bit about you"
     links = [
         { github = "https://github.com/jenboc" },
