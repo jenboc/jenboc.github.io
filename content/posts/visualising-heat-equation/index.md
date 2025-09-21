@@ -50,12 +50,12 @@ This might be over-engineering, but I like the idea of having an abstract class
 which implements a `visualise` method, and forces subclasses to implement some
 method which gives the solution at a given value at \\(x\\) and \\(t\\).
 
-{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/one-dimension/src/solver.py?token=GHSAT0AAAAAAC7FXKP4PDM2OTHYJILZ56S42GIZK2Q" type="python" >}}
+{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/solvers/solver.py" type="python" >}}
 
 Now, we can make a class for each method, implementing `u(x,t)` as required.
 For example:
 
-{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/one-dimension/src/solver_example.py?token=GHSAT0AAAAAAC7FXKP5C7EITIWQRUJWXOIG2GIZMWQ" type="python" >}}
+{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/solver_implementation.py" type="python" >}}
 
 Alternatively, if you wanted to do it functionally, you could always just
 pass the appropriate solving function (in our OOP case: the `u(x,t)`'s) into
@@ -113,7 +113,7 @@ do two things:
 
 My implementation is as follows:
 
-{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/one-dimension/src/series_solver.py?token=GHSAT0AAAAAAC7FXKP5DC7ZJJJZ5NY2ZELC2GJSRUQ" type="python" >}}
+{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/solvers/series_solver.py" type="python" >}}
 
 To see what the solution looks like, let's visualise our problem with:
 - \\(\kappa = 0.1\\)
@@ -185,7 +185,7 @@ in that way. This is much cheaper!
 
 My implementation is as follows:
 
-{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/one-dimension/solvers/mol_solver.py?token=GHSAT0AAAAAAC7FXKP4NTTU3GXPNUG25OL62GK5FDA" type="python" >}}
+{{< codeimporter url="https://raw.githubusercontent.com/jenboc/heat-equation-visualisation/refs/heads/main/solvers/mol_solver.py" type="python" >}}
 
 If we visualise the problem with the same parameters as with the series solver,
 we obtain a very familiar animation:
@@ -237,3 +237,9 @@ even those we cannot solve analytically.
 It is important to note, however, that there are many more methods to solve PDEs
 which we haven't considered, e.g. [Spectral Methods](https://en.wikipedia.org/wiki/Spectral_method)
 which borrows key ideas from the Separation of Variables method.
+
+## Repository
+The repository containing all the code included in this article, and the scripts
+used to generate the graphs can be found here:
+
+{{< github repo="jenboc/heat-equation-visualisation" showThumbnail=true >}}
