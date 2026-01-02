@@ -2,6 +2,7 @@
 date = '2025-12-10T12:52:40Z'
 draft = false
 title = 'Quantum Annealing Using DWave: A Practical Introduction'
+tags = ['Quantum Computing', 'Quantum Annealing', 'Tutorial']
 +++
 {{< katex >}}
 
