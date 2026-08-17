@@ -2,6 +2,7 @@
 date = '2026-08-17T21:09:30+01:00'
 draft = false
 title = 'Using Quantum Annealing to Solve the Elliptic Subset Sum Problem'
+tags = ['Quantum Computing', 'Quantum Annealing']
 +++
 
 ## Summary
