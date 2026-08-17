@@ -16,7 +16,7 @@ title = "Jenson Cain"
 [params.author]
     name = "Jenson Cain"
     image = "https://github.com/jenboc.png"
-    headline = "Student in Computer Science and Mathematics"
+    headline = "Recent Graduate of CS & Maths from UoM"
     # bio = "A little bit about you"
     links = [
         { github = "https://github.com/jenboc" },
@@ -39,7 +39,7 @@ title = "Jenson Cain"
         # { keybase = "https://keybase.io/username" },
         # { kickstarter = "https://www.kickstarter.com/profile/username" },
         # { lastfm = "https://lastfm.com/user/username" },
-        # { linkedin = "https://linkedin.com/in/username" },
+        { linkedin = "https://linkedin.com/in/jenson-cain" },
         # { mastodon = "https://mastodon.instance/@username" },
         # { medium = "https://medium.com/username" },
         # { microsoft = "https://www.microsoft.com/" },
