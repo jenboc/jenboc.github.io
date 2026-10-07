@@ -13,7 +13,7 @@ defaultBackgroundImage = "image.jpg"
 
 highlightCurrentMenuArea = true
 
-mainSections = ["posts", "projects"]
+mainSections = ["posts"]
 
 [header]
     layout = "fixed"
