@@ -85,7 +85,7 @@ observed 37 heads. We begin by defining our hypotheses:
 Assuming that the null hypothesis is true, since each coin flip is independent
 with assumed probability \\(\frac{1}{2}\\) of showing heads,
 we can model the number of heads \\(X\\) achieved through the experiment using
-the binomial distribution, i.e. \\(X \sim \text{Bin}\left(100, \frac{1}{2}\right)\\).
+the [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution), i.e. \\(X \sim \text{Bin}\left(100, \frac{1}{2}\right)\\).
 
 In order to decide whether to reject or fail to reject \\(H_0\\) we wish to construct
 a decision rule using \\(\alpha\\) which identifies unusually high and unusually low
@@ -176,7 +176,7 @@ follow the following steps:
 3. Carry out the hypothesis test.
 
 Ensuring that the hypotheses are set in stone before seeing experimental data
-is the best defense against (HARKing)[https://en.wikipedia.org/wiki/HARKing].
+is the best defense against [HARKing](https://en.wikipedia.org/wiki/HARKing).
 However, exploring data can be valuable for hypothesis generation. If exploratory
 analysis is used to inform hypothesis design, then these hypotheses should be
 tested using new data, or by using a particular method which accounts for such a process.
