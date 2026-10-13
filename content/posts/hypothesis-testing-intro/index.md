@@ -23,58 +23,100 @@ mathematical proofs as well as experimental study by introducing the _Hypothesis
 Testing Framework_.
 
 ## Hypothesis Testing Framework
-- Why is hypothesis testing important?
+Suppose you flip a coin 100 times and observe 37 heads. What can we say about the coin?
+Are these 100 flips sufficient to say that the coin is biased? Do we need to do
+more testing? It is possible that either the coin is biased, or we were simply unlucky
+with a fair coin. Hypothesis testing provides us with a principled way to distinguish
+between these two conflicting explanations, in the same way that mathematical proof
+techniques provided principled approaches to demonstrating the correctness of a statement.
 
+In a hypothesis test, we describe the two possible outcomes formally as the
+null hypothesis and the alternative hypothesis. The null hypothesis is typically
+the "default" belief, e.g. in the coin scenario, our null hypothesis would be that
+"the coin is fair". The alternative hypothesis is the "alternative explanation", e.g.
+"the coin is biased". We typically write these in mathematical notation, denoting
+the null hypothesis as \\(H_0\\) and the alternative hypothesis as \\(H_A\\). Therefore,
+for the example above we would write:
 
-- What does it mean for something to be "statistically significant"?
+\\(H_0: p = 1/2\\)
+
+\\(H_A: p \ne 1/2\\)
+
+where \\(p\\) denotes the probability of obtaining a head from a single coin flip.
+
+In a general sense, the hypothesis testing framework has 3 steps:
+
+1. Define a _null hypothesis_ (\\(H_0\\)) and an _alternative hypothesis_ (\\(H_A\\)).
+2. Assuming \\(H_0\\) is true, choose a statistical model which encapsulates our observations (usually some distribution).
+3. Compare our real observation with results expected from the model.
+4. Using the comparison, reject \\(H\_0\\) or fail to reject \\(H_0\\).
+
+The details of the comparison in step 3 will be the subject of the next sections.
+One thing that I wish to draw attention to is the wording of "reject" and "fail to reject".
+At no point do we say "accept \\(H_A\\)" or "accept \\(H\_0\\)". This is very important since
+our test can only measure how compatible our observations are with \\(H_0\\), but can not
+prove or disprove the null hypothesis definitively.
+
+This is the key difference between mathematical proofs and hypothesis tests.
+Mathematical proofs establish a conclusion using given premises and rules of inference;
+thus if the premises are true, and the reasoning is valid, the conclusion is necessarily
+true with 100% certainty. On the other hand, hypothesis tests use empirical observations
+in order to assess a hypothesis under a statistical model. This means that conclusions
+made by hypothesis testing are subject to some level of uncertainty.
 
 ## Confidence and Significance Levels
-- What is a confidence level?
+We define the boundary between rejection, and failing to reject \\(H_0\\) using
+a _significance level_ (usually denoted by \\(\alpha\\)). This is the probability
+of rejecting \\(H\_0\\) in the case that it is actually true, i.e. the probability
+of an "incorrect rejection". More often than not, we use \\(\alpha = 0.05\\); values
+may vary depending on application. For example, in clinical trials, we may use
+a lower significance level if an incorrect rejection would be "dangerous".
 
-- What is a significance level?
+We are going to statistically test whether the coin flipped in the experiment at the
+start of the last section is biased with \\(\alpha = 0.05\\). Recall that we flipped a coin 100 times and
+observed 37 heads. We begin by defining our hypotheses:
 
-### Example
-Suppose that flip a coin 100 times and observe 37 heads. We wish to statistically
-test whether or not this coin is fair with \\(\alpha = 0.05\\).
-We set up the following hypotheses:
+\\(H_0: p = \frac{1}{2}\\), i.e. the coin is fair.
 
-\\(H_0: p = 1/2\\), i.e. the probability of the coin landing on heads is \\(1/2\\)
-and the coin is thus fair.
+\\(H_A: p \ne \frac{1}{2}\\), i.e. the coin is biased.
 
-\\(H_A: p \ne 1/2\\), i.e. the probability of the coin landing on heads is _different_
-to \\(1/2\\) and the coin is thus unfair.
+Assuming that the null hypothesis is true, since each coin flip is independent,
+we can model the number of heads \\(X\\) achieved through the experiment using
+the binomial distribution, i.e. \\(X \sim \text{Bin}\left(100, \frac{1}{2}\right)\\).
 
-Since we observed less heads, one could choose that the alternative hypothesis
-actually reads \\(p < 1/2\\). However, we do not wish to demonstrate that the
-coin is biased in a certain direction; just that it is biased at all. Therefore,
-either hypothesis is valid for what we wish to show, but they aren't equivalent
-(as we shall show later).
+Since we are testing with \\(\alpha = 0.05\\), we want a 5% chance of "false rejection",
+we can imagine this as a "2-tailed test".
 
-Suppose the null hypothesis was true. Since the coin flips are independent, we
-can model the experiment using a [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution),
-i.e. we can model the number of heads as a random variable \\(H \sim \text{Bin}(100, 1/2)\\).
-We can then use pre-existing knowledge of the binomial distribution in order to calculate
-our \\(1-\alpha = 0.95\\) confidence interval.
+**Diagram**
 
-**Diagram of the distribution**
+Thus, we can create a "rejection rule" (i.e. a rule which determines what
+observations allow us to reject \\(H_0\\)) by finding the interval in which
+95% of the expected outcomes lie in the distribution, this is known as the
+95% _confidence interval_. 
 
-We find with 95% confidence (using a table, calculator or statisical software)
-that the expected number of heads is \\(50 \pm 10\\), i.e. for a fair coin we expect
-that the number of observed heads \\(h\\) satisfies \\(40 \le h \le 60\\).
+A \\(\beta \\%\\) _confidence interval_ is a range of values which is likely to
+contain the true value of a population parameter. In particular, if we repeated
+the study many times, about \\(\beta \\%\\) of the intervals would contain the true value.
 
-In our experiment, we observed \\(37 < 40\\) heads. Therefore, we reject \\(H_0\\)
-since there is sufficient evidence to suggest that \\(p \ne \frac{1}{2}\\).
+There are a variety of possible methods to do this: software, calculator, tables, by hand. However, after rounding
+(since we can only do a integral amount of coin flips), we find that this interval
+is \\(40 < x < 60\\). Then since \\(37 < 40\\), we reject \\(H_0\\) and report
+that there is sufficient evidence to suggest that \\(p \ne \frac{1}{2}\\), i.e.
+the coin is biased.
 
 ## Testing using \\(p\\)-values
-- What is a \\(p\\)-value?
+Rather than defining a rejection rule based on confidence intervals, we can also
+use \\(p\\)_-values_. **Define \\(p\\)-values**
 
-- Why would we use a \\(p\\)-value instead of a confidence level?
+We repeat the previous test with this technique to illustrate the difference.
+Our setup is exactly the same:
 
-### Example
-- "Is this coin fair?" but with \\(p\\)-values instead
+\\(H_0: p = \frac{1}{2}\\)
 
-Link onto next article where we use hypothesis testing to test if board games
-dice are "fair".
+\\(H_A: p \ne \frac{1}{2}\\)
+
+tested with \\(\alpha = 0.05\\). Assuming the null hypothesis, we can model the number
+of heads observed by experiment as \\(X \sim \text{Bin}\left(100, \frac{1}{2}\right)\\).
 
 ## Subjectivity
 We end with a few remarks on the difference between a formal mathematical proof
@@ -84,3 +126,8 @@ of a fact, and these hypothesis tests.
 - What if we did proceed with \\(H_A: p < \frac{1}{2}\\)?
 - Why is it impossible to have a formal mathematical proof of these sorts of things?
 - Why is it good to have a standardised testing method?
+
+## Model Choice
+- Why did we use Binomial distribution?
+- Can we use a different distribution?
+- Does it matter?
