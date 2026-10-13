@@ -1,5 +1,5 @@
 +++
-date = '2026-10-13T21:00:00Z'
+date = '2026-10-13T19:00:00Z'
 draft = false
 title = 'Hypothesis Testing: Rigour without Certainty'
 tags = ['Mathematics', 'Statistics']
@@ -95,7 +95,7 @@ We do this using a two-tailed test in which we split \\(\alpha\\) between the tw
 tails of the distribution. We reject \\(H_0\\) when it falls into either "rejection
 region", and fail to reject it otherwise. We illustrate this thinking below:
 
-![Two Tailed Probability Interval Test](./two-tailed-probability.png)
+![Two Tailed Probability Interval Test Diagram](./two-tailed-probability.png)
 
 Thus our job is to determine the boundaries of the 95% _probability interval_
 (coloured green in the diagram). That is, we wish to find \\(a, b\\) such that
@@ -128,7 +128,7 @@ Our setup is exactly the same:
 tested with \\(\alpha = 0.05\\). Assuming the null hypothesis, we can model the number
 of heads observed by experiment as \\(X \sim \text{Bin}\left(100, \frac{1}{2}\right)\\).
 
-![Two Tailed p-value Test](./two-tailed-p-value.png)
+![Two Tailed p-value Test Diagram](./two-tailed-p-value.png)
 
 There are two ways to make a comparison. The first is to calculate the exact \\(p\\)-value.
 Since this is a two-tailed test on a symmetric distribution,
@@ -158,7 +158,7 @@ Our alternative hypothesis would now become:
 This means that we now carry out a "one-tailed test" with the significance level
 completely contained in the left tail.
 
-![One Tailed Confidence Interval](./one-tailed.jpg)
+![One Tailed Hypothesis Test Diagram](./one-tailed.jpg)
 
 Our \\(p\\)-value here is \\(\mathbb{P}\left\[X \le 41\right\] \approx 0.04431 < \alpha\\).
 Thus we reject \\(H_0\\) and conclude that \\(p < \frac{1}{2}\\). Hence, changing the hypothesis
