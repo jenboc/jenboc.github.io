@@ -6,7 +6,6 @@ tags = ['Mathematics', 'Statistics']
 +++
 {{< katex >}}
 
-## Introduction
 At the start of my degree, I fell in love with mathematics because I loved
 the fact that every statement can be derived and proven from axioms and definitions.
 I found it deeply satisfying that everything presented by lecturers could be

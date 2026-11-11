@@ -6,7 +6,6 @@ tags = ['Mathematics', 'Statistics', 'R', 'Video Games', 'VALORANT']
 +++
 {{< katex >}}
 
-## Introduction
 In my [previous post](https://www.jensoncain.co.uk/posts/rigour-without-certainty),
 I introduced the fundamentals of hypothesis testing. This post aims to explore how
 these techniques can be applied to real-world data, particularly in an unconventional setting.
